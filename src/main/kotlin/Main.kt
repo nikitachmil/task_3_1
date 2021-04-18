@@ -7,14 +7,14 @@ fun main() {
 
         var textMinute = when (total) {
             1 -> {
-                "Byl(a) v sety $minute minutu nazad"
+                "Был(а) в сети $minute минуту назад"
             }
             in 2..4 -> {
-                "Byl(a) v sety $minute minuty nazad"
+                "Был(а) в сети $minute минуты назад"
             }
 
             else -> {
-                "Byla(a) v sety $minute minut nazad"
+                "Был(а) в сети $minute минут назад"
             }
         }
         return textMinute
@@ -25,15 +25,15 @@ fun main() {
         val total = hour % 10
         var textHour = when (total) {
             1 -> {
-                "Byl(a) v sety $hour chas nazad"
+                "Был(а) в сети $hour час назад"
             }
             in 2..4 -> {
-                "Byl(a) v sety $hour chasa nazad"
+                "Был(а) в сети $hour часа назад"
             }
 
 
             else -> {
-                "Byl(a) v sety $hour chasov nazad"
+                "Был(а) в сети $hour часов назад"
             }
         }
         return textHour
@@ -42,7 +42,7 @@ fun main() {
     fun goToText(time: Int): Any {
         var text = when (time) {
             in 0..60 -> {
-                "Byl (a) v sety tolko chto"
+                "Была(а) в сети только что"
             }
             in 61..3600 -> {
                 goToMinuteText(time)
@@ -51,13 +51,13 @@ fun main() {
                 goToHour(time)
             }
             in 86400..172800 -> {
-                "Byl (a) v sety segodnya"
+                "Был(а) в сети сегодня"
             }
             in 172801..259200 -> {
-                "Byl (a) v sety vchera"
+                "Был(а) в сети вчера"
             }
             else -> {
-                "Byl (a) v sety davno"
+                "Был(а) в сети давно"
 
             }
         }
