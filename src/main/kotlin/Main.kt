@@ -7,14 +7,14 @@ fun main() {
 
         var textMinute = when (total) {
             1 -> {
-                "Был(а) в сети $minute минуту назад"
+                "$minute минуту назад "
             }
             in 2..4 -> {
-                "Был(а) в сети $minute минуты назад"
+                "$minute минуты назад "
             }
 
             else -> {
-                "Был(а) в сети $minute минут назад"
+                "$minute минут назад "
             }
         }
         return textMinute
@@ -25,15 +25,15 @@ fun main() {
         val total = hour % 10
         var textHour = when (total) {
             1 -> {
-                "Был(а) в сети $hour час назад"
+                "$hour час назад "
             }
             in 2..4 -> {
-                "Был(а) в сети $hour часа назад"
+                "$hour часа назад "
             }
 
 
             else -> {
-                "Был(а) в сети $hour часов назад"
+                "$hour часов назад "
             }
         }
         return textHour
@@ -45,10 +45,12 @@ fun main() {
                 "Была(а) в сети только что"
             }
             in 61..3600 -> {
-                goToMinuteText(time)
+                var total = goToMinuteText(time)
+                "Был(а) в сети $total"
             }
             in 3601..86400 -> {
-                goToHour(time)
+                var total = goToHour(time)
+                "Был(а) в сети $total"
             }
             in 86400..172800 -> {
                 "Был(а) в сети сегодня"
@@ -66,7 +68,7 @@ fun main() {
     }
 
 
-    var time = 86401//время в секундах
+    var time = 62//время в секундах
 
     var text = goToText(time)
 
