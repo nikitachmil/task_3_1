@@ -45,12 +45,10 @@ fun main() {
                 "Была(а) в сети только что"
             }
             in 61..3600 -> {
-                var total = goToMinuteText(time)
-                "Был(а) в сети $total"
+                "Был(а) в сети ${goToMinuteText(time)}"
             }
             in 3601..86400 -> {
-                var total = goToHour(time)
-                "Был(а) в сети $total"
+                "Был(а) в сети ${goToHour(time)}"
             }
             in 86400..172800 -> {
                 "Был(а) в сети сегодня"
@@ -68,7 +66,7 @@ fun main() {
     }
 
 
-    var time = 62//время в секундах
+    var time = 86300//время в секундах
 
     var text = goToText(time)
 
